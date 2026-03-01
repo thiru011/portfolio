@@ -1,201 +1,285 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thirumoorthy K | SOC Analyst Portfolio</title>
+<title>Thirumoorthy K | SOC Analyst</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+
+:root {
+    --bg: #0f1117;
+    --card: #161b22;
+    --primary: #00c7ff;
+    --accent: #00ff9d;
+    --text: #e6edf3;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #0f1117;
-    color: #e6edf3;
-    line-height: 1.6;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15,17,23,0.9);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+nav h3 {
+    color: var(--primary);
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* HERO */
 header {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle at center, #121826 0%, #0f1117 70%);
     text-align: center;
+    padding: 0 20px;
 }
 
-header h1 {
+.hero-content h1 {
     font-size: 3rem;
-    color: #00c7ff;
+    color: var(--primary);
 }
 
-header h2 {
+.hero-content h2 {
     font-weight: 300;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .typing {
     font-family: 'Roboto Mono', monospace;
-    color: #00ff9d;
+    color: var(--accent);
     margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.buttons {
+    margin-top: 30px;
 }
 
 .btn {
-    margin-top: 30px;
     padding: 12px 25px;
-    border: 1px solid #00c7ff;
-    color: #00c7ff;
+    border: 1px solid var(--primary);
+    color: var(--primary);
     text-decoration: none;
-    margin-right: 10px;
+    margin: 10px;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background: #00c7ff;
-    color: #0f1117;
+    background: var(--primary);
+    color: var(--bg);
 }
 
+/* SECTIONS */
 section {
-    padding: 80px 10%;
+    padding: 100px 10%;
 }
 
 .section-title {
     font-size: 2rem;
     margin-bottom: 40px;
-    color: #00c7ff;
+    color: var(--primary);
+    text-align: center;
 }
 
+/* CARDS */
 .card {
-    background: #1a1f2e;
+    background: var(--card);
     padding: 25px;
-    margin-bottom: 20px;
-    border-left: 4px solid #00c7ff;
-    transition: 0.3s;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .card:hover {
+    border-color: var(--primary);
     transform: translateY(-5px);
 }
 
-.skills-grid {
+/* GRID */
+.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     padding: 40px;
     background: #121826;
 }
 
-a {
-    color: #00c7ff;
+footer a {
+    color: var(--primary);
+    margin: 0 10px;
     text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--accent);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    nav {
+        padding: 15px 5%;
+    }
+    section {
+        padding: 80px 5%;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
 }
 
 </style>
 </head>
 <body>
 
-<header>
-    <h1>THIRUMOORTHY K</h1>
-    <h2>SOC Analyst | SIEM Monitoring | Incident Response</h2>
-    <div class="typing">
-        > Monitoring Logs... <br>
-        > Detecting Threats... <br>
-        > Investigating Alerts...
-    </div>
+<!-- NAVIGATION -->
+<nav>
+    <h3>Thirumoorthy</h3>
     <div>
-        <a href="#projects" class="btn">View Projects</a>
-        <a href="resume.pdf" class="btn">Download Resume</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header>
+    <div class="hero-content">
+        <h1>THIRUMOORTHY K</h1>
+        <h2>SOC Analyst | SIEM Monitoring | Incident Response</h2>
+        <div class="typing">
+            > Monitoring Logs... <br>
+            > Detecting Threats... <br>
+            > Investigating Alerts...
+        </div>
+        <div class="buttons">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="resume.pdf" class="btn">Download Resume</a>
+        </div>
     </div>
 </header>
 
+<!-- ABOUT -->
 <section id="about">
     <h2 class="section-title">About Me</h2>
     <div class="card">
-        <p>
         Cybersecurity Engineering student focused on Security Operations (SOC).
-        Skilled in log analysis, alert triage, and threat detection using Splunk.
-        Experienced in network traffic investigation and vulnerability assessment.
-        My goal is to grow as a Tier-1 SOC Analyst and advance into Incident Response.
-        </p>
+        Experienced in log monitoring, alert triage, and network investigation using Splunk, Wireshark, and Nmap.
+        Actively building detection labs aligned with MITRE ATT&CK.
     </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
     <h2 class="section-title">Technical Skills</h2>
-    <div class="skills-grid">
+    <div class="grid">
         <div class="card">
             <h3>SIEM & Monitoring</h3>
-            <p>Splunk, Log Analysis, Alert Creation, Event Correlation</p>
+            Splunk, Log Analysis, Alert Tuning, Event Correlation
         </div>
         <div class="card">
             <h3>Network Security</h3>
-            <p>Wireshark, Nmap, TCP/IP, Packet Analysis</p>
+            Wireshark, Nmap, TCP/IP, Packet Inspection
         </div>
         <div class="card">
             <h3>Vulnerability Tools</h3>
-            <p>Nessus, Metasploit, Burp Suite, PortSwigger Labs</p>
+            Nessus, Burp Suite, Metasploit
         </div>
         <div class="card">
             <h3>Frameworks</h3>
-            <p>MITRE ATT&CK, Cyber Kill Chain, Incident Response Lifecycle</p>
+            MITRE ATT&CK, Cyber Kill Chain, IR Lifecycle
         </div>
     </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
     <h2 class="section-title">Projects</h2>
 
     <div class="card">
         <h3>Network Threat Detection Lab</h3>
-        <p><strong>Tools:</strong> Splunk, Nmap, Wireshark</p>
-        <p>
-        Simulated port scanning attack in a virtual lab environment.
-        Captured traffic and ingested logs into Splunk.
-        Created custom detection alerts and mapped findings to MITRE ATT&CK.
-        </p>
+        Simulated port scanning attack and created Splunk detection alerts.
+        Investigated packet captures and mapped activity to MITRE ATT&CK.
     </div>
 
     <div class="card">
         <h3>Web Vulnerability Assessment</h3>
-        <p><strong>Tools:</strong> Burp Suite, PortSwigger</p>
-        <p>
-        Identified SQL Injection and XSS vulnerabilities in lab applications.
-        Documented remediation strategies and mitigation techniques.
-        </p>
+        Identified SQL Injection and XSS vulnerabilities in lab environment and documented remediation.
     </div>
 
 </section>
 
+<!-- CERTIFICATIONS -->
 <section id="certifications">
     <h2 class="section-title">Certifications</h2>
     <div class="card">
-        <p>ISC2 – Security Principles</p>
-        <p>ISC2 – Incident Response & BCDR</p>
-        <p>Cisco – Introduction to Cybersecurity</p>
-        <p>Cisco – Networking Basics</p>
-        <p>EC-Council – Dark Web Fundamentals</p>
-        <p>SOC Fundamentals – SOC Member Badge</p>
+        ISC2 – Security Principles<br>
+        ISC2 – Incident Response & BCDR<br>
+        Cisco – Introduction to Cybersecurity<br>
+        Cisco – Networking Basics<br>
+        EC-Council – Dark Web Fundamentals<br>
+        SOC Fundamentals – SOC Member Badge
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="card" style="text-align:center;">
+        📧 thirukrish234@gmail.com <br><br>
+        <a href="#">LinkedIn</a> |
+        <a href="#">GitHub</a><br><br>
+        Open to SOC Intern / Junior SOC Analyst Opportunities
     </div>
 </section>
 
 <footer>
-    <p>📧 thirukrish234@gmail.com</p>
-    <p>
-        <a href="#">LinkedIn</a> |
-        <a href="#">GitHub</a>
-    </p>
-    <p>Open to SOC Intern / Junior SOC Analyst Opportunities</p>
+    © 2026 Thirumoorthy K | SOC Analyst Portfolio
 </footer>
 
 </body>
